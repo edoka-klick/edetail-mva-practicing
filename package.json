@@ -1,0 +1,49 @@
+{
+  "name": "my-iva-project",
+  "version": "1.0.0",
+  "description": "Description of my IVA project",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@klickinc/amp-iva-boilerplate-component-briefcase": "^1.0.2",
+    "@klickinc/amp-iva-boilerplate-component-clickstreamer": "^1.0.1",
+    "@klickinc/amp-iva-boilerplate-component-content-swap": "^1.0.2",
+    "@klickinc/amp-iva-boilerplate-component-expanding-isi": "^1.0.2",
+    "@klickinc/amp-iva-boilerplate-component-hotlink": "^1.2.1",
+    "@klickinc/amp-iva-boilerplate-component-isi": "^1.0.1",
+    "@klickinc/amp-iva-boilerplate-component-modal": "^1.0.2",
+    "@klickinc/amp-iva-boilerplate-component-swipe": "^1.0.1",
+    "@klickinc/amp-iva-boilerplate-component-tabs": "^1.0.1",
+    "@klickinc/amp-iva-boilerplate-component-vendor-hammerjs": "^2.0.9",
+    "@klickinc/amp-iva-boilerplate-component-vendor-iscroll": "^5.2.1",
+    "@klickinc/amp-iva-boilerplate-component-vendor-jquery": "^1.10.3",
+    "@klickinc/amp-iva-boilerplate-component-vendor-jquery-hammer": "^2.0.1",
+    "@klickinc/amp-iva-boilerplate-component-vendor-veeva-library": "^28.13.11",
+    "@klickinc/amp-iva-boilerplate-component-video": "^1.0.2",
+    "@klickinc/sketch-iva-component-scroll": "0.0.1"
+  },
+  "dependencies": {},
+  "klick-components": {
+    "@klickinc/amp-iva-boilerplate-component-briefcase": "src/shared/boilerplate",
+    "@klickinc/amp-iva-boilerplate-component-clickstreamer": "src/shared/boilerplate",
+    "@klickinc/amp-iva-boilerplate-component-content-swap": "src/shared/boilerplate",
+    "@klickinc/amp-iva-boilerplate-component-expanding-isi": "src/shared/boilerplate",
+    "@klickinc/amp-iva-boilerplate-component-hotlink": "src/shared/boilerplate",
+    "@klickinc/amp-iva-boilerplate-component-isi": "src/shared/boilerplate",
+    "@klickinc/amp-iva-boilerplate-component-modal": "src/shared/boilerplate",
+    "@klickinc/amp-iva-boilerplate-component-swipe": "src/shared/boilerplate",
+    "@klickinc/amp-iva-boilerplate-component-tabs": "src/shared/boilerplate",
+    "@klickinc/amp-iva-boilerplate-component-video": "src/shared/boilerplate",
+    "@klickinc/amp-iva-boilerplate-component-vendor-hammerjs": "src/shared/vendor",
+    "@klickinc/amp-iva-boilerplate-component-vendor-iscroll": "src/shared/vendor",
+    "@klickinc/amp-iva-boilerplate-component-vendor-jquery": "src/shared/vendor",
+    "@klickinc/amp-iva-boilerplate-component-vendor-jquery-hammer": "src/shared/vendor",
+    "@klickinc/amp-iva-boilerplate-component-vendor-veeva-library": "src/shared/vendor",
+    "@klickinc/amp-iva-boilerplate-component-vendor-minibarjs": "src/shared/vendor",
+    "@klickinc/sketch-iva-component-scroll": "src/shared/sketch"
+  }
+}

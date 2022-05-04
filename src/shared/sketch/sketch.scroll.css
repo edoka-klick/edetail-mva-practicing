@@ -1,0 +1,35 @@
+/* dist/sketch.scroll.css v0.0.1 Thu Feb 18 2021 22:17:30 GMT-0500 (Eastern Standard Time) */
+/**
+ * @file
+ * sketch.scroll.scss
+ *
+ * Default styles needed for scrollable elements exported from Sketch.
+ */
+
+/**
+ * Allow the MiniBar (scroll plugin) element to be positioned outside of the
+ * scrollable region container.
+ */
+.mb-container {
+  overflow: auto;
+}
+[data-scrollable-sketch-id] {
+  overflow: visible;
+  position: fixed;
+}
+
+/**
+ * Hide the native scrollbar.
+ */
+[data-scrollable-sketch-id] *::-webkit-scrollbar {
+  display: none;
+}
+
+/**
+ * Switch the scrollable image element to 'static' positioning. Otherwise, it
+ * won't scroll with the default CSS values.
+ */
+[data-scrollable-sketch-id] [data-sketch-id] {
+  position: static;
+}
+

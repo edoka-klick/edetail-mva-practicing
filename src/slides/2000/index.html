@@ -1,0 +1,206 @@
+{% extends "layout.slide.html" %}
+
+{% set body_class = "" %}
+
+
+{% block page %}
+<style>
+  .img--content {
+  }
+
+
+  .popup [data-modal-trigger-open] {
+    height: 48px;    
+  }
+  .popup .btn-injection-site-ar {
+    left: 3px;
+    width: 170px;
+  }
+  .popup .btn-systemic-ar {
+    left: 179px;
+    width: 146px;
+  }  
+  .popup .btn-fever-post-vaccination {
+    left: 335px;
+    width: 214px;
+  }    
+  .popup .btn-study-design-primary {
+    left: 785px;
+    width: 144px;
+  }    
+
+
+  .btn-injection-site-ar {
+    top: 397px;
+    left: 92px;
+    width: 226px;
+    height: 48px;
+  } 
+  .popup-injection-site-ar {
+    background-image: url("popup-injection-site-ar.png");
+    top: 89px;
+    left: 49px;
+    width: 928px;
+    height: 495px;
+  }
+  .popup-injection-site-ar [data-modal-trigger-open] {
+    top: 452px;
+  }  
+
+
+  .btn-systemic-ar {
+    top: 397px;
+    left: 340px;    
+    width: 196px;
+    height: 48px;    
+  }    
+  .popup-systemic-ar {
+    background-image: url("popup-systemic-ar.png");
+    top: 89px;
+    left: 49px;
+    width: 928px;
+    height: 605px;
+  }  
+  .popup-systemic-ar [data-scrollable-sketch-id="systemic-ar"] {
+    position: absolute;
+    width: 845px;
+    height: 430px;
+    top: 120px;
+    left: 43px;
+  }
+  .popup-systemic-ar .systemic-ar-copy {
+    background-image: url("popup-systemic-ar-copy.png");
+    top: 89px;
+    left: 57px;
+    width: 785px;
+    height: 600px;
+  }    
+  .popup-systemic-ar [data-modal-trigger-open] {
+    top: 562px;
+  }     
+
+
+  .btn-fever-post-vaccination {
+    top: 397px;
+    left: 558px;    
+    width: 274px;
+    height: 48px;    
+  }
+  .popup-fever-post-vaccination {
+    background-image: url("popup-fever-post-vaccination.png");
+    top: 89px;
+    left: 49px;
+    width: 928px;
+    height: 564px;
+  }  
+  .popup-fever-post-vaccination [data-modal-trigger-open] {
+    top: 522px;
+  }
+
+
+  .popup-study-design-primary {
+    background-image: url("popup-study-design-primary.png");
+    top: 89px;
+    left: 49px;
+    width: 928px;
+    height: 605px;
+  }
+  .popup-study-design-primary [data-modal-trigger-open] {
+    top: 562px;
+  }  
+
+
+  .popup-study-design {
+    background-image: url("popup-study-design.png");
+    top: 92px;
+    left: 49px;
+    width: 923.5px;
+    height: 608px;
+  }  
+  .popup-references {
+    background-image: url("popup-references.png");
+    top: 191px;
+    left: 49px;
+    width: 923.5px;
+    height: 418px;
+  }
+  .popup-footnotes {
+    background-image: url("popup-footnotes.png");
+    top: 150px;
+    left: 49px;
+    width: 923.5px;
+    height: 484px;
+  }      
+</style>
+
+<div class="img--content sprite"></div>
+
+
+<!-- Injection site ARs -->
+<div class="sprite btn-injection-site-ar" data-modal-trigger-open data-modal-target=".popup-injection-site-ar"></div>
+<div class="popup popup-injection-site-ar sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+
+  <!-- Buttons to trigger other popups -->
+  <div class="sprite btn-injection-site-ar" data-modal-trigger-open data-modal-target=".popup-injection-site-ar"></div>
+  <div class="sprite btn-systemic-ar" data-modal-trigger-open data-modal-target=".popup-systemic-ar"></div>
+  <div class="sprite btn-fever-post-vaccination" data-modal-trigger-open data-modal-target=".popup-fever-post-vaccination"></div>
+  <div class="sprite btn-study-design-primary" data-modal-trigger-open data-modal-target=".popup-study-design-primary"></div>
+</div>
+
+
+<!-- Systemic ARs -->
+<div class="sprite btn-systemic-ar" data-modal-trigger-open data-modal-target=".popup-systemic-ar"></div>
+<div class="popup popup-systemic-ar sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+
+  <!-- Scrollable Content -->
+  <div class="systemic-ar-copy sprite" data-scrollable data-sketch-id="systemic-ar"></div>
+
+  <!-- Buttons to trigger other popups -->
+  <div class="sprite btn-injection-site-ar" data-modal-trigger-open data-modal-target=".popup-injection-site-ar"></div>
+  <div class="sprite btn-systemic-ar" data-modal-trigger-open data-modal-target=".popup-systemic-ar"></div>
+  <div class="sprite btn-fever-post-vaccination" data-modal-trigger-open data-modal-target=".popup-fever-post-vaccination"></div>
+  <div class="sprite btn-study-design-primary" data-modal-trigger-open data-modal-target=".popup-study-design-primary"></div>
+</div>
+
+
+<!-- Fever Post-Vaccination -->
+<div class="sprite btn-fever-post-vaccination" data-modal-trigger-open data-modal-target=".popup-fever-post-vaccination"></div>
+<div class="popup popup-fever-post-vaccination sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+
+  <!-- Buttons to trigger other popups -->
+  <div class="sprite btn-injection-site-ar" data-modal-trigger-open data-modal-target=".popup-injection-site-ar"></div>
+  <div class="sprite btn-systemic-ar" data-modal-trigger-open data-modal-target=".popup-systemic-ar"></div>
+  <div class="sprite btn-fever-post-vaccination" data-modal-trigger-open data-modal-target=".popup-fever-post-vaccination"></div>
+  <div class="sprite btn-study-design-primary" data-modal-trigger-open data-modal-target=".popup-study-design-primary"></div>
+</div>
+
+
+<!-- Study Design (Group Modal version) -->
+<div class="popup popup-study-design-primary sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+
+  <!-- Buttons to trigger other popups -->
+  <div class="sprite btn-injection-site-ar" data-modal-trigger-open data-modal-target=".popup-injection-site-ar"></div>
+  <div class="sprite btn-systemic-ar" data-modal-trigger-open data-modal-target=".popup-systemic-ar"></div>
+  <div class="sprite btn-fever-post-vaccination" data-modal-trigger-open data-modal-target=".popup-fever-post-vaccination"></div>
+  <div class="sprite btn-study-design-primary" data-modal-trigger-open data-modal-target=".popup-study-design-primary"></div>
+</div>
+
+
+
+<div class="popup popup-study-design sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+<div class="popup popup-references sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+<div class="popup popup-footnotes sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends "layout.slide.html" %}
+
+{% set body_class = "no-fn no-sd" %}
+
+{% block page %}
+
+<style>
+  body {
+    background-image: url('bg.png');
+    background-position: 0 64px;
+    background-size: 1024px 445px;
+    background-repeat: no-repeat;
+  }
+
+  .img--content {
+    z-index: 1;
+  }
+
+  .preload {
+    background: url("tab-1.png"),
+                url("tab-2.png"),
+                url("tab-3.png"),
+                url("tab-4.png"),
+                url("tab-5.png"),
+                url("tab-6.png");
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+    visibility: hidden;
+  }  
+
+  .img--tab-content {
+    z-index: 1;
+    top: 149.5px;
+    left: 57px;
+    width: 971.5px;
+    height: 318px;    
+  }
+  [data-tab="1"] {
+    background-image: url("tab-1.png");
+  } 
+  [data-tab="2"] {
+    background-image: url("tab-2.png");
+  }
+  [data-tab="3"] {
+    background-image: url("tab-3.png");
+  }  
+  [data-tab="4"] {
+    background-image: url("tab-4.png");
+  }   
+  [data-tab="5"] {
+    background-image: url("tab-5.png");
+  }
+  [data-tab="6"] {
+    background-image: url("tab-6.png");
+  }    
+
+
+  [data-tab-id] {
+    left: 0px;
+    width: 150px;
+    height: 43px;    
+  }
+  [data-tab-id="1"] {
+    top: 20px;
+  }
+  [data-tab-id="2"] {
+    top: 66px;
+  }
+  [data-tab-id="3"] {
+    top: 111px;
+  }
+  [data-tab-id="4"] {
+    top: 155px;
+  } 
+  [data-tab-id="5"] {
+    top: 200px;
+  } 
+  [data-tab-id="6"] {
+    top: 245px;
+  }
+
+  .btn-study-design {
+    top: 440px;
+    left: 620px;
+    width: 130px;
+    height: 50px;
+    z-index: 1;
+  }  
+  .popup-study-design {
+    background-image: url("popup-study-design.png");
+    top: 89px;
+    left: 57px;
+    width: 923.5px;
+    height: 608px;
+  }  
+
+  .btn-non-inferiority-data {
+    top: 440px;
+    left: 740px;
+    width: 210px;
+    height: 50px;
+    z-index: 1;
+  }
+  .popup-non-inferiority-data {
+    background-image: url("popup-non-inferiority-data.png");
+    top: 221px;
+    left: 53px;
+    width: 923.5px;
+    height: 325px;
+  }
+  
+  .popup-references {
+    background-image: url("popup-references.png");
+    top: 89px;
+    left: 53px;
+    width: 923.5px;
+    height: 648px;
+  }  
+</style>
+
+<div class="img--content sprite"></div>
+<div class="sprite preload"></div>
+
+<div class="img--tab-content sprite" data-tab="1">
+  <div class="sprite" data-tab-id="1"></div>
+  <div class="sprite" data-tab-id="2"></div>
+  <div class="sprite" data-tab-id="3"></div>
+  <div class="sprite" data-tab-id="4"></div>
+  <div class="sprite" data-tab-id="5"></div>
+  <div class="sprite" data-tab-id="6"></div>
+</div>
+
+<div class="btn-study-design sprite" data-modal-trigger-open data-modal-target=".popup-study-design"></div>
+<div class="btn-non-inferiority-data sprite" data-modal-trigger-open data-modal-target=".popup-non-inferiority-data"></div>
+
+
+<div class="popup popup-non-inferiority-data sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+<div class="popup popup-study-design sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+<div class="popup popup-references sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+{% endblock %}

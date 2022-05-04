@@ -1,0 +1,78 @@
+<!-- begin: global.content.html -->
+
+<!-- Header -->
+<header class="sprite">
+  <div class="img--header-copy sprite"></div>
+  <div class="menu-button-open sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".menu-modal" data-modal-active-classname="menu-active"></div>
+</header>
+
+<div class="menu-button-close sprite" data-modal-trigger-close></div>
+<div class="menu-modal sprite">
+  <!-- Left column -->
+  <div class="menu-link parental-challenges sprite" data-slide="1000"></div>
+  <div class="menu-link programmatic-challenges sprite" data-slide="2000"></div>
+  <div class="menu-link well-child-portfolio sprite" data-slide="3000"></div>
+  <div class="menu-link combination-vaccines sprite" data-slide="4000"></div>
+  <div class="menu-link immunization-schedule sprite" data-slide="5000"></div>
+  <div class="menu-link additional-portfolio-inf sprite" data-slide="6000"></div>
+  <div class="menu-link ordering sprite" data-slide="7000"></div>
+  <div class="menu-link pricing-and-contracting sprite" data-slide="8000"></div>
+
+  <!-- Quick Links -->
+  <div class="menu-link link-home sprite" data-slide="0000"></div>
+  <div class="menu-link link-summary sprite" data-slide="8000"></div>
+  <div class="menu-link link-portfolio sprite" data-slide="8000"></div>
+  <div class="menu-link link-ref sprite" data-slide="9000"></div>
+</div>
+
+{# 
+  Make the current slide's 'content.png' file the background image, if it exists.
+#}
+<style>
+.img--content {
+  background-image: url(content.png);
+}
+</style>
+
+{# Add the overlay element for all modals. DO NOT REMOVE. #}
+<div class="modal-overlay" data-modal-trigger-close></div>
+
+
+<!-- Selected Safety Information -->
+<div class="slide-ssi sprite">
+  <div class="sprite slide-ssi-copy slide-ssi-copy-1"></div>
+  <div class="sprite slide-ssi-copy slide-ssi-copy-2"></div>
+  <div class="sprite slide-ssi-copy slide-ssi-copy-3"></div>
+  <div class="sprite slide-ssi-copy slide-ssi-copy-4"></div>
+  <div class="sprite slide-ssi-copy slide-ssi-copy-5"></div>
+</div>
+
+
+<!-- Button for popups for the slides -->
+<div class="btn-side btn-sd sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".popup-study-design"></div>
+<div class="btn-side btn-ref sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".popup-references"></div>
+<div class="btn-side btn-fn sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".popup-footnotes"></div>
+
+
+<!-- ISI popup -->
+<div class="popup popup-isi sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+  <div class="isi-copy" data-scrollable data-sketch-id="XYZ"></div>
+</div>
+
+
+<!-- Abbreviations modal -->
+<div class="popup popup-abbreviations sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+
+<!-- Footer -->
+<footer class="sprite">
+  <div class="footer-btn sprite btn-isi" data-modal-trigger-open data-disable-close-btn data-modal-target=".popup-isi" data-modal-active-classname="isi-active"></div>
+  <div class="footer-btn sprite btn-pi" data-modal-trigger-open data-disable-close-btn data-modal-target=".popup-pi" data-modal-active-classname="pi-active"></div>
+ </footer>
+
+<div id="overlay"></div>
+
+<!-- end: global.content.html -->

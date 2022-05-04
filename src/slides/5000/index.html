@@ -1,0 +1,27 @@
+{% extends "layout.slide.html" %}
+
+{% set body_class = "no-sd no-fn" %}
+
+
+{% block page %}
+<style>
+  .img--content {
+  }
+  
+  .popup-references {
+    background-image: url("popup-references.png");
+    top: 92px;
+    left: 49px;
+    width: 923.5px;
+    height: 608px;
+  }
+</style>
+
+
+<div class="img--content sprite"></div>
+
+<div class="popup popup-references sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+{% endblock %}

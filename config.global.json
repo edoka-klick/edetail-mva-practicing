@@ -1,0 +1,98 @@
+{
+  "options": {
+    "screenshot_width": 1024,
+    "screenshot_height": 768,
+    "screenshot_delay": 100,
+    "screenshot_url_params": {
+      "edmode": "1"
+    },
+    "css_sourcemap": false,
+    "js_uglify": false,
+    "js_sourcemap": false,
+    "js_babel_browser_targets": [
+      "last 2 Chrome versions"
+    ],
+    "dev_admin_mode": "swimlane",
+    "dev_admin_key_previous": 37,
+    "dev_admin_key_next": 39,
+    "dev_admin_key_togglenav": 191,
+    "dev_admin_default_is_visible": false
+  },
+  "libraries": {
+    "boilerplate": {
+      "css": [
+        "boilerplate.scss",
+        "boilerplate.briefcase.scss",
+        "boilerplate.content-swap.scss",
+        "boilerplate.hotlink.scss",
+        "boilerplate.modal.scss",
+        "boilerplate.video.scss"
+      ],
+      "js": [
+        "boilerplate.clickstreamer.js",
+        "boilerplate.tabs.js",
+        "boilerplate.modal.js",
+        "boilerplate.modal-forced.js",
+        "boilerplate.video.js",
+        "boilerplate.content-swap.js",
+        "boilerplate.hotlink.js"
+      ],
+      "folders": []
+    },
+    "vendor": {
+      "css": [
+        "minibar.css"
+      ],
+      "js": [
+        "jquery.js",
+        "veeva-library.js",
+        "hammer.js",
+        "jquery.hammer.js",
+        "minibar.js"
+      ],
+      "folders": []
+    },
+    "sketch": {
+      "css": [
+        "sketch.scroll.css"
+      ],
+      "js": [
+        "sketch.scroll.js"
+      ]
+    },
+    "pasteur": {
+      "css": [
+        "brand.scss"
+      ],
+      "js": [
+        "custom.ssi.js"
+      ],
+      "folders": [
+        "fonts",
+        "media"
+      ]
+    }
+  },
+  "veeva": {
+    "product": "Vaxelis",
+    "country": "United States",
+    "language__v": "English",
+    "binder_type__v": "Multichannel Presentation",
+    "binder_lifecycle__v": "Binder Lifecycle",
+    "binder_status__v": "Draft",
+    "slide_type__v": "Multichannel Slide",
+    "slide_lifecycle__v": "CRM Content Lifecycle",
+    "slide_status__v": "Draft",
+    "crm_disable_actions__v": "",
+    "crm_custom_reaction__v": "n/a",
+    "libraries": {
+      "vendor__boilerplate__sketch__vaxelis": {
+        "title": "vaxelis_SHARED_CONTENT",
+        "document_id": 3274
+      }
+    },
+    "product__v": "00P00000000B001",
+    "country__v": "unitedStates"
+  },
+  "tokens": {}
+}

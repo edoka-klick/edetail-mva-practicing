@@ -1,0 +1,28 @@
+<!--
+  STANDARD BOILERPLATE: DO NOT EDIT
+  begin: global.footer.html
+-->
+
+<!-- Add the Veeva presentation_id. -->
+<script>
+  var iva_presentation_name = "{{ currentpres__id }}";
+</script>
+
+<!-- Add vendor and compiled javascript files. -->
+{{ boilerplate__javascript_files | safe }}
+
+<script>
+	$(document).ready(function() {
+		$(document).on('touchmove', function(e) {
+			e.preventDefault();
+		});
+	});
+</script>
+
+{% if is_dev %}
+  {% include "dev.ui.navigation.html" %}
+{% endif %}
+
+</body>
+</html>
+<!-- end: global.footer.html -->

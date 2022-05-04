@@ -1,0 +1,30 @@
+{% extends "layout.slide.html" %}
+
+{% set body_class = "no-ssi no-sd no-ref no-fn" %}
+
+
+{% block page %}
+
+<style>
+  .img--content {
+  }
+
+  [data-scrollable-sketch-id="9000"] {
+    top: 182px;
+    left: 89px;
+    width: 860px;
+    height: 430px;
+  }
+  .references-copy {
+    background-image: url("references-copy.png");
+    background-size: 100% 100%;
+    width: 832px;
+    height: 825px;  
+  }    
+</style>
+
+<div class="img--content sprite"></div>
+<div class="references-copy sprite" data-scrollable data-sketch-id="9000"></div>
+
+{% endblock %}
+

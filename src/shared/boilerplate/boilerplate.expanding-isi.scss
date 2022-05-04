@@ -1,0 +1,17 @@
+/* dist/boilerplate.expanding-isi.scss v1.0.2 Sun Oct 18 2020 16:17:41 GMT-0400 (Eastern Daylight Time) */
+/**
+ * @file boilerplate.expanding-isi.scss
+ */
+
+/**
+ * Expanding ISI.
+ */
+[data-expanding-isi] {
+  box-sizing: border-box;
+  position: absolute;
+}
+
+[data-toggle-expand-isi] {
+  position: absolute;
+}
+

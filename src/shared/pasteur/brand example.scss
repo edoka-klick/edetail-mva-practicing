@@ -1,0 +1,375 @@
+/**
+ * @file brand.scss
+ *
+ * Specific rules for this brand's IVA.
+ *
+ * This file will ultimately live at: ./shared/styles.min.css
+ */
+
+body {
+  font-family: Arial;
+}
+
+//
+// Header
+//
+// header {
+//   background-image: url(./vaxelis/media/bg-header@2x.png);
+//   background-position: -10px -6px;
+//   background-repeat: no-repeat;
+//   width: 1042px;
+//   height: 82px;
+//   z-index: 100;
+// }
+header .img--header-copy {
+  background-image: url(./pasteur/media/menu.png);
+  width: 1024px;
+  height: 55px;
+  z-index: 9999;
+}
+// header .menu-button-open {
+//   background-image: url(./vaxelis/media/btn-menu@2x.png);
+//   top: 7px;
+//   right: 19px;
+//   width: 90px;
+//   height: 50px;
+//   z-index: 100;
+// }
+
+
+//
+// Menu
+//
+// .menu-button-close {
+//   background-image: url(./vaxelis/media/btn-menu-close@2x.png);
+//   display: none;
+//   top: 7px;
+//   right: 0px;
+//   width: 90px;
+//   height: 50px;
+//   z-index: 1000;
+
+//   .menu-active & {
+//     display: block;
+//   }
+// }
+
+
+.menu-modal {
+  background-image: url(./vaxelis/media/popup-menu@2x.png);
+  top: 164px;
+  left: 67px;
+  width: 900.5px;
+  height: 449px;
+
+  &:after {
+    content: "";
+    background-image: url(./vaxelis/media/13th_helpers_b_Logo@2x.png);
+    background-size: 100% 100%;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    bottom: -287px;
+    right: -220px;
+    width: 517px;
+    height: 517px;
+  }
+}
+
+.menu-modal .menu-link {
+  width: 220px;
+  height: 50px;
+
+  $left-links-x-position: 50px;
+  $middle-links-x-position: 350px;
+  $quick-links-x-position: 640px;
+
+  // Left
+  &.link-components {
+    left: $left-links-x-position;
+    top: 103px;
+  }
+  &.link-immunogenicity {
+    left: $left-links-x-position;
+    top: 165px;
+  }
+  &.link-safety {
+    left: $left-links-x-position;
+    top: 225px;
+    width: 270px;
+  }
+  &.link-vaccination {
+    left: $left-links-x-position;
+    top: 285px;
+    width: 270px;
+  }
+
+
+  // Middle
+  &.link-dosage {
+    left: $middle-links-x-position;
+    top: 103px;
+    height: 80px;
+  }
+  &.link-practice {
+    left: $middle-links-x-position;
+    top: 195px;
+    height: 80px;
+  }
+  &.link-tool {
+    left: $middle-links-x-position;
+    top: 285px;
+  }
+
+
+  // Quick links
+  &.link-home {
+    left: $quick-links-x-position;
+    top: 160px;
+  }
+  &.link-summary {
+    left: $quick-links-x-position;
+    top: 218px;
+  }
+  &.link-ref {
+    left: $quick-links-x-position;
+    top: 285px;
+  }
+}
+
+
+//
+// Content
+//
+.img--content {
+  background-image: url(content.png);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+//
+// SSI
+//
+// .slide-ssi {
+//   background-image: url(./vaxelis/media/bg-slide-ssi@2x.png);
+//   top: 493.5px;
+//   left: 0;
+//   width: 1024px;
+//   height: 219px;
+//   z-index: 1;
+
+//   .no-ssi & {
+//     display: none;
+//   }
+// }
+// .slide-ssi .slide-ssi-copy {
+//   top: 25px;
+//   left: 57px;
+//   opacity: 0;
+
+//   &.visible {
+//     opacity: 1;
+//   }
+
+//   &.slide-ssi-copy-1 {
+//     background-image: url(./vaxelis/media/slide-ssi-1@2x.png);
+//     width: 880px;
+//     height: 144px;
+//   }
+
+//   &.slide-ssi-copy-2 {
+//     background-image: url(./vaxelis/media/slide-ssi-2@2x.png);
+//     width: 880px;
+//     height: 179px;
+//   }
+
+//   &.slide-ssi-copy-3 {
+//     background-image: url(./vaxelis/media/slide-ssi-3@2x.png);
+//     width: 880px;
+//     height: 179px;
+//   }
+
+//   &.slide-ssi-copy-4 {
+//     background-image: url(./vaxelis/media/slide-ssi-4@2x.png);
+//     width: 880px;
+//     height: 179px;
+//   }
+
+//   &.slide-ssi-copy-5 {
+//     background-image: url(./vaxelis/media/slide-ssi-5@2x.png);
+//     width: 880px;
+//     height: 179px;
+//   }
+// }
+
+
+// //
+// // Popup buttons (right hand side)
+// //
+// .btn-side {
+//   left: 965px;
+//   width: 69px;
+//   height: 45px;
+//   z-index: 10;
+// }
+
+// .btn-sd {
+//   background-image: url(./vaxelis/media/btn-study-design@2x.png);
+//   top: 504px;
+
+//   .no-sd & {
+//     display: none;
+//   }
+// }
+// .btn-ref {
+//   background-image: url(./vaxelis/media/btn-references@2x.png);
+//   top: 554px;
+
+//   .no-ref & {
+//     display: none;
+//   }
+// }
+// .btn-fn {
+//   background-image: url(./vaxelis/media/btn-footnotes@2x.png);
+//   top: 604px;
+
+//   .no-fn & {
+//     display: none;
+//   }
+// }
+
+
+// //
+// // Footer
+// //
+footer {
+  background-image: url(./pasteur/media/footer.png);
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 1024px;
+  height: 52px;
+  z-index: 100;
+}
+footer .footer-btn {
+  bottom: 0;
+  height: 60px;
+
+  &.btn-abbr {
+    left: 55px;
+    width: 82px;
+  }
+  &.link-pi {
+    left: 139px;
+    width: 205px;
+  }
+  &.btn-isi {
+    left: 346px;
+    width: 238px;
+  }
+  &.link-schedule {
+    left: 585px;
+    width: 192px;
+  }
+}
+
+
+//
+// ISI Modal
+//
+// .popup-isi {
+//   background-image: url(./vaxelis/media/popup-isi@2x.png);
+//   top: 70px;
+//   left: 57px;
+//   width: 910px;
+//   height: 704px;
+// }
+
+// [data-scrollable-sketch-id] {
+//   overflow: hidden;
+// }
+// [data-scrollable-sketch-id="XYZ"] {
+//   top: 185px;
+//   left: 125px;
+//   width: 806px;
+//   height: 364px;
+//   z-index: 100;
+// }
+
+// .popup-isi .isi-copy {
+//   background-image: url(./vaxelis/media/isi-copy@2x.png);
+//   background-size: 100% 100%;
+//   width: 806px;
+//   height: 757px;
+// }
+.mb-track-y {
+  background-color: #F5F5F5;
+  opacity: 1 !important;
+  width: 4px;
+}
+.mb-track-y .mb-bar {
+  background-color: #3AACCB;
+  border-radius: 3px;
+  right: -1px;
+  width: 6px;
+}
+
+
+//
+// Popups/Modals
+//
+.popup .popup-button-close {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 114px;
+  height: 54px;
+}
+// .popup-abbreviations {
+//   background-image: url(./vaxelis/media/popup-abbreviations@2x.png);
+//   top: 129px;
+//   left: 53px;
+//   width: 910px;
+//   height: 510px;
+// }
+
+
+
+/**
+ * Modal overlay.
+ * This is defined in boilerplate.modal.less. If we need to change the overlay
+ * colour/opacity that appears when a modal is displayed, change it here.
+ */
+// .modal-overlay {
+//   background: url(./vaxelis/media/bg-modal-overlay@2x.png);
+//   width: 100%;
+//   height: 100%;
+// }
+
+.modal-visible {
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+// This is to make the scrollbars in the modals work properly.
+.modal-hidden {
+  /* sr-only */
+  border: 0;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(0,0,0,0);
+  display: block;
+  font-size: 1px;
+  height: 1px;
+  line-height: 1px;
+  margin: -1px 0 0 -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  outline: 0;
+  white-space: nowrap;
+  width: 1px;
+}

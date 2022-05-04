@@ -1,0 +1,39 @@
+{% extends "layout.slide.html" %}
+
+{% set body_class = "no-fn no-sd" %}
+
+
+{% block page %}
+<style>
+  .preload {    
+    opacity: 0;
+    visibility: hidden;
+  }
+
+
+  .popup-references {
+    background-image: url("popup-references.png");
+    top: 231px;
+    left: 57px;
+    width: 923.5px;
+    height: 325px;
+  }
+
+
+</style>
+
+<div class="sprite preload"></div>
+<div class="img--content sprite"></div>
+
+<div class="img--tab-content sprite" data-tab="0">
+  <div class="sprite" data-tab-id="0"></div>
+  <div class="sprite" data-tab-id="1"></div>
+  <div class="sprite" data-tab-id="2"></div>
+  <div class="sprite" data-tab-id="3"></div>
+</div>
+
+<div class="popup popup-references sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+{% endblock %}

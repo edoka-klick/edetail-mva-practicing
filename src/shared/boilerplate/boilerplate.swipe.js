@@ -1,0 +1,2 @@
+/* dist/boilerplate.swipe.js v1.0.1 Sun Oct 18 2020 16:17:42 GMT-0400 (Eastern Daylight Time) */
+!function(i){i.swipe=function(){i(document).hammer().on("swipeleft",function(e){i("body").hasClass("swipe-disabled")||(console.log("swipe left"),com.veeva.clm.nextSlide())}),i(document).hammer().on("swiperight",function(e){i("body").hasClass("swipe-disabled")||(console.log("swipe right"),com.veeva.clm.prevSlide())})},i.swipe()}(jQuery);

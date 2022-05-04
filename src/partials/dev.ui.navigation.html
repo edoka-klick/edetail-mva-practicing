@@ -1,0 +1,277 @@
+<!-- begin: dev.ui.navigation.html -->
+
+<!--
+  Inject developer navigation panel.
+  This lets us navigate between slides in the current presentation.
+
+  Note that we can't navigate to another presentation because the browserSync
+  session is tied to the folder for the current presentation.
+-->
+<style>
+.dev-ui-browser,
+.dev-ui-browser *,
+.dev-ui-browser *:after,
+.dev-ui-browser *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.dev-ui-browser {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: {{ global__options__screenshot_width }}px;
+  width: 160px;
+  height: {{ global__options__screenshot_height }}px;
+  background: #ddd;
+  z-index: 99;
+  padding: 5px;
+  overflow-y: scroll;
+}
+.dev-ui-browser ul,
+.dev-ui-browser li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  clear: both;
+  font-family: Arial, Helvetica;
+}
+.dev-ui-browser a {
+  display: block;
+  margin-bottom: 1em;
+  text-decoration: none;
+  color: #333;
+  background: #ccc;
+  font-size: .9em;
+}
+.dev-ui-browser img {
+  display: block;
+  height: 113px;
+  background: #999;
+  margin-bottom: 5px;
+}
+.dev-ui-active-slide {
+  outline: 3px solid black;
+}
+
+.dev-ui-prevnext {
+  width: 100%;
+}
+.dev-ui-prevnext a {
+  display: inline-block;
+  height: 50px;
+  width: 50%;
+  background: black;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 42px;
+  line-height: 42px;
+  font-weight: bold;
+  margin: 0;
+}
+.dev-ui-prevnext .dev-ui-prev {
+  float: left;
+}
+.dev-ui-prevnext .dev-ui-next {
+  float: right;
+}
+
+
+
+/* Swimlane position */
+.dev-ui-browser.swimlane {
+  left: 0;
+  top: initial;
+  bottom: 0;
+  width: {{ global__options__screenshot_width }}px;
+  height: 240px;
+  z-index: 99999999;
+}
+.dev-ui-browser.swimlane li {
+  display: inline-block;
+  margin: .5em;
+}
+
+
+</style>
+
+  <script>
+
+var buildiva_devpanel = (function(config) {
+  /**
+   * Define global variables.
+   */
+  var panel_classname = "dev-ui-browser";
+
+  var delim = "~~~";
+  var pres_ids = "{{ presentation_ids }}".split(delim);
+  var pres_titles = "{{ presentation_titles }}".split(delim);
+  var slide_ids = "{{ slide_ids }}".split(delim);
+  var slide_titles = "{{ slide_titles }}".split(delim);
+
+  /**
+   * Determine the current slide id from the URL.
+   * Expect the pattern: http://localhost:<port>/<slide-id>/index.html
+   */
+  function getCurrentSlideId() {
+    var items = location.pathname.split("/");
+    var filename = items.pop();
+    var slide_id = items.pop();
+
+    return slide_id;
+  }
+
+  function renderPrevNext() {
+    var current_slide_id = getCurrentSlideId();
+    var html = '<div class="dev-ui-prevnext">';
+
+    if (slide_ids.length) {
+      // Get previous slide id.
+      if (slide_ids[0] === current_slide_id) {
+        // There is no previous slide.
+      }
+      else {
+        var slide_id = slide_ids[slide_ids.indexOf(current_slide_id) - 1];
+        html += renderButton("dev-ui-prev", "&laquo;", slide_id);
+      }
+
+      // Get next slide id.
+      if (slide_ids[slide_ids.length - 1] === current_slide_id) {
+        // There is no next slide.
+      }
+      else {
+        var slide_id = slide_ids[slide_ids.indexOf(current_slide_id) + 1];
+        html += renderButton("dev-ui-next", "&raquo;", slide_id);
+      }
+    }
+    html += "</div>";
+
+    return html;
+  }
+
+  function renderButton(classname, text, slide_id) {
+    var date = new Date();
+    var timestamp = date.getTime();
+    return `<a href="/${slide_id}/index.html?ts=${timestamp}" class="${classname}">${text}</a>`;
+  }
+
+  /**
+   * Render a navigation list of slides in the current presentation, with their
+   * thumbnail image (if it exists).
+   */
+  function renderSlideTitles(slide_ids, slide_titles) {
+    var slide_id_active = getCurrentSlideId();
+
+    html = "<ul>";
+    slide_ids.map((slide_id, index) => {
+      var classes = "";
+      if (slide_id === slide_id_active) {
+        classes += " dev-ui-active-slide";
+      }
+
+      html += "<li>" + renderSlideLink(slide_id, slide_titles[index], true, classes) + "</li>";
+    });
+    html += "</ul>";
+    return html;
+  }
+  function renderSlideLink(slide_id, title, show_thumbnail, classes) {
+    var date = new Date();
+    var timestamp = date.getTime();
+    var html = `<a href="/${ slide_id }/index.html?ts=${timestamp}">`;
+    if (show_thumbnail === true) {
+      html += `<img src="/${ slide_id }/thumb.png" width="150" height="auto" title="${ slide_id }" class="${classes}">`;
+    }
+    html += `${ title }<br>(id: ${ slide_id })</a>`;
+
+    return html;
+  }
+
+  function addKeyBindings() {
+    document.onkeyup = function(e) {
+      var key = e.which || e.keyCode;
+
+      if (key > 0 && key === config.dev_admin_key_previous) {
+        // Left arrow = previous slide.
+        if (document.querySelector(".dev-ui-browser a.dev-ui-prev") !== null) {
+          document.querySelector(".dev-ui-browser a.dev-ui-prev").click();
+        }
+      } else if (key > 0 && key === config.dev_admin_key_next) {
+        // Right arrow = next slide.
+        if (document.querySelector(".dev-ui-browser a.dev-ui-next") !== null) {
+          document.querySelector(".dev-ui-browser a.dev-ui-next").click();
+        }
+      } else if (key > 0 && key === config.dev_admin_key_togglenav) {
+        // 'n' = Toggle navigation menu.
+        toggleNavPanel();
+      }
+    }
+  }
+
+  function getNavPanel() {
+    return document.querySelector("." + panel_classname);
+  }
+  function toggleNavPanel() {
+    var el = getNavPanel();
+    if (el.style.display === "none" || el.style.display === "") {
+      showNavPanel();
+    }
+    else {
+      hideNavPanel();
+    }
+  }
+  function showNavPanel() {
+    var el = getNavPanel();
+    el.style.display = "block";
+
+    // Scroll so the active slide is visible.
+    var pres_height = parseInt("{{ global__options__screenshot_height }}", 10);
+    var el_active = document.querySelector(".dev-ui-active-slide");
+    var position = el_active.getBoundingClientRect().top;
+    if (position > pres_height) {
+      var offset = position - pres_height + 200;
+      document.querySelector("." + panel_classname).scrollTop = offset;
+    }
+  }
+  function hideNavPanel() {
+    var el = getNavPanel();
+    el.style.display = "";
+  }
+
+  /**
+   * Inject the navigation panel into the DOM.
+   */
+  function injectPanel(html, classname) {
+    var target = document.querySelector("body");
+    var element = document.createElement('div');
+    element.classList.add(classname);
+    if (config.dev_admin_mode.trim() !== "") {
+      element.classList.add(config.dev_admin_mode);
+    }
+    element.innerHTML = html;
+
+    target.parentNode.insertBefore(element, target.nextSibling);
+  }
+
+  var html = "";
+  html += renderPrevNext();
+  html += renderSlideTitles(slide_ids, slide_titles);
+  injectPanel(html, panel_classname);
+
+  addKeyBindings();
+
+  if (config.dev_admin_default_is_visible === true) {
+    showNavPanel();
+  }
+
+})({
+  dev_admin_mode: "{{ global__options__dev_admin_mode }}",
+  dev_admin_key_previous: parseInt(0 + "{{ global__options__dev_admin_key_previous }}", 10),
+  dev_admin_key_next: parseInt(0 + "{{ global__options__dev_admin_key_next }}", 10),
+  dev_admin_key_togglenav: parseInt(0 + "{{ global__options__dev_admin_key_togglenav }}", 10),
+  dev_admin_default_is_visible: "{{ global__options__dev_admin_default_is_visible }}" === "true"
+});
+
+  </script>
+
+<!-- end: dev.ui.navigation.html -->

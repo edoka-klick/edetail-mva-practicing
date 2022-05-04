@@ -1,0 +1,18 @@
+/* dist/boilerplate.video.scss v1.0.2 Sun Oct 18 2020 16:17:40 GMT-0400 (Eastern Daylight Time) */
+/**
+ * @file boilerplate.video.scss
+ */
+
+/**
+ * Hide video timeline bar.
+ */
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+audio::-webkit-media-controls-timeline,
+video::-webkit-media-controls-timeline {
+  visibility: hidden;
+}
+

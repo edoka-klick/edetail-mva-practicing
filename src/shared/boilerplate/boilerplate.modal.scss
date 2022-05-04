@@ -1,0 +1,111 @@
+/* dist/boilerplate.modal.scss v1.0.2 Sun Oct 18 2020 16:17:43 GMT-0400 (Eastern Daylight Time) */
+/**
+ * @file: boilerplate.modal.less
+ * Modal overlay.
+ *
+ * z-indexes:
+ * - background overlay: 997
+ * - reference: 998
+ * - close button: 999
+ *
+ * - modal group navigation: 1000
+ * - modal: 1010
+ */
+.modal-overlay {
+  position: absolute;
+  display: none;
+  z-index: 997; /* Modals will be z-index 998. */
+  left: 0;
+  top: 0;
+  width: 1024px;
+  height: 768px;
+
+  /* Expect the following rules to be changed per brand. */
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.modal-overlay.active{
+  display: block;
+}
+
+.modal-hidden {
+  display: none;
+}
+.modal-visible {
+  position: absolute;
+  display: block;
+  z-index: 1010;
+  box-sizing: border-box;
+
+  /* Expect the following rules to be changed per brand. */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+}
+
+.modal-button-close {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  top: 0;
+  display: block;
+
+  /* Expect the following rules to be changed per brand. */
+  width: 50px;
+  height: 50px;
+}
+
+/**
+ * Group Modals button styles.
+ *
+ * Expect this to be overridden for each brand's design.
+ */
+.modal-group-btn {
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  z-index: 1000;
+
+  /* Expect the following rules to be changed per brand. */
+  top: 480px;
+}
+
+/**
+ * Group Modals styles.
+ *
+ * Expect this to be overridden for each brand's design.
+ */
+.modal-active .modal-group-btn.active {
+  pointer-events: none;
+}
+
+[data-modal-group] {
+  transform: none;
+
+  /* Expect the following rules to be changed per brand. */
+  top: 90px;
+  left: 70px;
+}
+
+[data-modal-group] .prev,
+[data-modal-group] .next {
+  position: absolute;
+
+  /* Expect the following rules to be changed per brand. */
+  bottom: 3px;
+  height: 50px;
+  width: 100px;
+}
+  
+[data-modal-group] .prev {
+  left: 0px;
+}
+
+[data-modal-group] .next {
+  right: 0px;
+}
+
+.modal-active .pagination-container {
+  position: absolute;
+}

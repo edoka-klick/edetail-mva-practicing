@@ -1,0 +1,89 @@
+/**
+ * @file boilerplate.scss
+ *
+ * Global rules that will apply to all IVA projects.
+ */
+
+// This is already applied in top.htm for body.
+// We also add this style to the html element so that external PIs
+//    no longer suffer the 1 page lock bug when iScroll elements are enabled
+html,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 1024px;
+  height: 768px;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/**
+ * Background image elements on the page use the .sprite class name.
+ * The psd2html.js tool will automatically apply this in the markup it builds.
+ */
+.sprite {
+  position: absolute;
+  display: block;
+  background-size: 100% 100%;
+  -webkit-user-select: none;
+}
+.sprite.hidden {
+  display: none !important; // Should not be overwritten.
+}
+
+
+/**
+  * Animation: Image Wipe
+  * animates an image reveal
+  * left to right | bottom to top
+  *
+*/
+[data-img-reveal="leftright"] {
+  left: inherit;
+  -webkit-animation: leftright 1s forwards;
+}
+
+[data-img-reveal="rightleft"] {
+  right: inherit;
+  -webkit-animation: leftright 1s forwards;
+  animation: leftright 1s forwards;
+}
+
+[data-img-reveal="bottomtop"] {
+  bottom: inherit;
+  -webkit-animation: bottomtop 1s forwards;
+  animation: bottomtop 1s forwards;
+}
+
+[data-img-reveal="topbottom"] {
+  top: inherit;
+  -webkit-animation: bottomtop 1s forwards;
+  animation: bottomtop 1s forwards;
+}
+
+// Left to Right
+@-webkit-keyframes leftright {
+  from { width: 0%;}
+  to { width: 100%;}
+}
+@keyframes leftright {
+  from { width: 0%;}
+  to { width: 100%;}
+}
+
+//Bottom to Top
+@-webkit-keyframes bottomtop {
+  from { height: 0; }
+  to { height: 100%;}
+}
+@keyframes bottomtop {
+  from { height: 0;}
+  to { height: 100%;}
+}
+
+

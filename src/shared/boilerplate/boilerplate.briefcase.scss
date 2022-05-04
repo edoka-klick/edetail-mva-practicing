@@ -1,0 +1,11 @@
+/* dist/boilerplate.briefcase.scss v1.0.2 Sun Oct 18 2020 16:17:42 GMT-0400 (Eastern Daylight Time) */
+/**
+ * @file boilerplate.briefcase.scss
+ */
+
+a[data-rep-trigger],
+li[data-rep-trigger],
+div[data-rep-trigger],
+button[data-rep-trigger] {
+  display: none;
+}

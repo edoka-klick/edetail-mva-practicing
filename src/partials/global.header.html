@@ -1,0 +1,33 @@
+<!--
+  STANDARD BOILERPLATE: DO NOT EDIT
+  begin: global.header.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="slideTitle" content="{{ currentpres__id }}_{{ currentslide__id }}">
+
+    <!-- Shared CSS files. -->
+    {{ boilerplate__css_files | safe }}
+
+    <title>{{ currentpres__id }} - {{ currentslide__id }}</title>
+    <style>
+body {
+  margin: 0;
+  padding: 0;
+  width: {{ global__options__screenshot_width }}px;
+  height: {{ global__options__screenshot_height }}px;
+  overflow: hidden;
+}
+    </style>
+  </head>
+  <body data-slideid="{{ currentslide__id }}" class="slide-{{ currentslide__id }} {{ body_class }}">
+
+<!-- end global.header.html -->

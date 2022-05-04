@@ -1,0 +1,135 @@
+{% extends "layout.slide.html" %}
+
+{% set body_class = "no-sd no-fn" %}
+
+
+{% block page %}
+<style>
+  .img--content {
+  }
+
+
+  .preload {
+    background: url("tab-1.png"), url("tab-2.png"), url("tab-3.png");
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+    visibility: hidden;
+  }
+
+
+
+
+  .popup-references {
+    background-image: url("popup-references.png");
+    top: 95px;
+    left: 53px;
+    width: 923.5px;
+    height: 608px;
+  }
+  .popup-references [data-scrollable-sketch-id="4000"] {
+    top: 212px;
+    left: 125px;
+    width: 824px;
+    height: 400px;
+  }
+  .popup-references .references-copy {
+    background-image: url("popup-references-copy.png");
+    background-size: 100% 100%;
+    width: 789px;
+    height: 605px;
+  }
+</style>
+
+<div class="sprite preload"></div>
+
+<div class="img--content sprite"></div>
+
+<div class="img--tab-content sprite" data-tab="1">
+  <div class="sprite" data-tab-id="1"></div>
+  <div class="sprite" data-tab-id="2" data-tab-video-file="Vaxelis_animation_cap_2_v4.mp4"></div>
+  <div class="sprite" data-tab-id="3" data-tab-video-file="Vaxelis_animation_cap_3_v3.mp4"></div>
+
+  <div class="sprite btn-CDC-recommendation" data-modal-trigger-open data-modal-target=".popup-CDC-recommendation"></div>
+
+  <div class="tab-1-content">
+    <div class="sprite btn-expand-graph" data-modal-trigger-open data-modal-target=".popup-tab-1-chart"></div>
+  </div>
+
+  <div class="tab-2-content">
+    <div class="sprite btn-expand-graph" data-modal-trigger-open data-modal-target=".popup-tab-2-1-chart" data-modal-video-playback="#tab-2-popup-1-video"></div>
+  </div>
+
+  <div class="tab-3-content">
+    <div class="sprite btn-expand-graph" data-modal-trigger-open data-modal-target=".popup-tab-3-1-chart" data-modal-video-playback="#tab-3-popup-1-video"></div>
+  </div>
+
+  <video id="tab-video" class="tab-video sprite">
+    <source src="Vaxelis_animation_cap_2_v4.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+<!-- Tab 1 Modal -->
+<div class="popup popup-tab-1-chart sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+
+<!-- Tab 2 Modals -->
+<div class="popup popup-group popup-tab-2-1-chart sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+
+  <div class="sprite btn-group-modal" data-modal-trigger-open data-modal-target=".popup-tab-2-2-chart" data-modal-video-playback="#tab-2-popup-2-video"></div>
+
+  <video id="tab-2-popup-1-video" class="popup-video sprite">
+    <source src="Vaxelis_animation_cap_2_v4.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="popup popup-group popup-tab-2-2-chart sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+
+  <div class="sprite btn-group-modal" data-modal-trigger-open data-modal-target=".popup-tab-2-1-chart" data-modal-video-playback="#tab-2-popup-1-video"></div>
+
+  <video id="tab-2-popup-2-video" class="popup-video sprite">
+    <source src="Vaxelis_animation_cap_2_v4.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+<!-- Tab 3 Modals -->
+<div class="popup popup-group popup-tab-3-1-chart sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+
+  <div class="sprite btn-group-modal" data-modal-trigger-open data-modal-target=".popup-tab-3-2-chart" data-modal-video-playback="#tab-3-popup-2-video" data-modal-active-classname="popup-group-3"></div>
+
+  <video id="tab-3-popup-1-video" class="popup-video sprite">
+    <source src="Vaxelis_animation_cap_3_v3.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="popup popup-group popup-tab-3-2-chart sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+
+  <div class="sprite btn-group-modal" data-modal-trigger-open data-modal-target=".popup-tab-3-1-chart" data-modal-video-playback="#tab-3-popup-1-video" data-modal-active-classname="popup-group-3"></div>
+
+  <video id="tab-3-popup-2-video" class="popup-video sprite">
+    <source src="Vaxelis_animation_cap_3_v3.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+<!-- Slide Global Modals -->
+<div class="popup popup-CDC-recommendation sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+</div>
+
+
+<div class="popup popup-references sprite modal-hidden">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+  <div class="references-copy" data-scrollable data-sketch-id="4000"></div>
+</div>
+
+
+<script src="custom.4000.js" defer></script>
+
+{% endblock %}

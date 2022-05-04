@@ -1,0 +1,21 @@
+/* dist/boilerplate.content-swap.scss v1.0.2 Sun Oct 18 2020 16:17:43 GMT-0400 (Eastern Daylight Time) */
+/**
+ * @file boilerplate.content-swap.scss
+ */
+
+/**
+ * Content swap tiles.
+ */
+[data-swap-container] [data-swap-tile] {
+  opacity: 0;
+  -webkit-transition: opacity 0.35s ease-in;
+}
+
+[data-swap-container] [data-swap-tile].is-active {
+  opacity: 1;
+  z-index: 10;
+}
+
+[data-swap-active] {
+  display: none !important;
+}

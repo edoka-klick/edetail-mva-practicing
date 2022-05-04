@@ -1,0 +1,233 @@
+/**
+ * @file brand.scss
+ *
+ * Specific rules for this brand's IVA.
+ *
+ * This file will ultimately live at: ./shared/styles.min.css
+ */
+
+body {
+  font-family: Arial;
+}
+
+
+header .img--header-copy {
+  background-image: url(./pasteur/media/menu.png);
+  width: 1024px;
+  height: 55px;
+  z-index: 9;
+}
+
+
+//
+// Menu
+//
+
+///vendodhja ku useri klikon per te hapur menune
+header .menu-button-open {
+  width: 40px;
+  height: 40px;
+  float: right;
+  left: 970px;
+  top: 5px;
+  z-index: 99;
+}
+
+
+///nuk eshte specifikuar akoma
+.menu-button-close {
+  display: none;
+  top: 7px;
+  right: 0px;
+  width: 90px;
+  height: 50px;
+  z-index: 1000;
+
+  .menu-active & {
+    display: block;
+  }
+}
+
+///modali i menuse - supozohet te jete gjendja mbasi klikohet ne menu button
+.menu-modal {
+  background-image: url(./pasteur/media/menu-open.png);
+  top: 50px;
+  left: 520px;
+  width: 500px !important;
+  height: 500px !important;
+
+  &:after {
+    content: "";
+    background-size: 100% 100%;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+  }
+}
+
+///supozohet menuja eshte e hapur dhe ketu vendosen linqet qe permban menuja
+.menu-modal .menu-link {
+  width: 235px;
+  height: 55px;
+
+  $left-links-x-position: 24px;
+  $quick-links-x-position: 280px;
+
+  // Left
+  &.parental-challenges {
+    left: $left-links-x-position;
+    top: 50px;
+  }
+  &.programmatic-challenges {
+    left: $left-links-x-position;
+    top: 105px;
+  }
+  &.well-child-portfolio {
+    left: $left-links-x-position;
+    top: 160px;
+  }
+  &.combination-vaccines {
+    left: $left-links-x-position;
+    top: 215px;
+  }
+  &.immunization-schedule {
+    left: $left-links-x-position;
+    top: 268px;
+  }
+  &.additional-portfolio-inf {
+    left: $left-links-x-position;
+    top: 323px;
+  }
+  &.ordering {
+    left: $left-links-x-position;
+    top: 378px;
+  }
+  &.pricing-and-contracting {
+    left: $left-links-x-position;
+    top: 430px;
+  }
+
+
+
+  // Quick links
+  &.link-home {
+    left: $quick-links-x-position;
+    top: 65px;
+    width: 210px;
+    height: 45px;
+  }
+  &.link-summary {
+    left: $quick-links-x-position;
+    top: 120px;
+    width: 210px;
+    height: 45px;
+  }
+  &.link-portfolio {
+    left: $quick-links-x-position;
+    top: 173px;
+    width: 210px;
+    height: 45px;
+  }
+  &.link-ref {
+    left: $quick-links-x-position;
+    top: 230px;
+    width: 210px;
+    height: 45px;
+  }
+}
+
+
+
+
+//
+// Content
+//
+.img--content {
+  background-image: url(content.png);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+// //
+// // Footer
+// //
+footer {
+  background-image: url(./pasteur/media/footer.png);
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 1024px;
+  height: 52px;
+  z-index: 100;
+}
+
+footer .footer-btn {
+  bottom: 0;
+  height: 50px;
+
+  &.btn-isi {
+    left: 70px;
+    width: 200px;
+  }
+  &.btn-pi {
+    left: 305px;
+    width: 170px;
+  }
+}
+
+
+
+//
+// Popups/Modals
+//
+.popup .popup-button-close {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 114px;
+  height: 54px;
+}
+
+
+
+/**
+ * Modal overlay.
+ * This is defined in boilerplate.modal.less. If we need to change the overlay
+ * colour/opacity that appears when a modal is displayed, change it here.
+ */
+// .modal-overlay {
+//   background: url(./vaxelis/media/bg-modal-overlay@2x.png);
+//   width: 100%;
+//   height: 100%;
+// }
+
+.modal-visible {
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+// This is to make the scrollbars in the modals work properly.
+.modal-hidden {
+  /* sr-only */
+  border: 0;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(0,0,0,0);
+  display: block;
+  font-size: 1px;
+  height: 1px;
+  line-height: 1px;
+  margin: -1px 0 0 -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  outline: 0;
+  white-space: nowrap;
+  width: 1px;
+}
