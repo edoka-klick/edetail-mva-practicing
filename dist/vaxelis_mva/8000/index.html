@@ -39,23 +39,10 @@ body {
 <style>
   .img--content {
   }
-
-  [data-scrollable-sketch-id="9000"] {
-    top: 182px;
-    left: 89px;
-    width: 860px;
-    height: 430px;
-  }
-  .references-copy {
-    background-image: url("references-copy.png");
-    background-size: 100% 100%;
-    width: 832px;
-    height: 825px;  
-  }    
+  
 </style>
 
 <div class="img--content sprite"></div>
-<div class="references-copy sprite" data-scrollable data-sketch-id="9000"></div>
 
 
 <!-- begin: global.content.html -->
@@ -66,7 +53,7 @@ body {
   <div class="menu-button-open sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".menu-modal" data-modal-active-classname="menu-active"></div>
 </header>
 
-<div class="menu-button-close sprite" data-modal-trigger-close></div>
+
 <div class="menu-modal sprite">
   <!-- Left column -->
   <div class="menu-link parental-challenges sprite" data-slide="1000"></div>
@@ -95,43 +82,107 @@ body {
 
 <div class="modal-overlay" data-modal-trigger-close></div>
 
-
-<!-- Selected Safety Information -->
-<div class="slide-ssi sprite">
-  <div class="sprite slide-ssi-copy slide-ssi-copy-1"></div>
-  <div class="sprite slide-ssi-copy slide-ssi-copy-2"></div>
-  <div class="sprite slide-ssi-copy slide-ssi-copy-3"></div>
-  <div class="sprite slide-ssi-copy slide-ssi-copy-4"></div>
-  <div class="sprite slide-ssi-copy slide-ssi-copy-5"></div>
-</div>
-
-
-<!-- Button for popups for the slides -->
+<!-- 
+Button for popups for the slides
 <div class="btn-side btn-sd sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".popup-study-design"></div>
 <div class="btn-side btn-ref sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".popup-references"></div>
 <div class="btn-side btn-fn sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".popup-footnotes"></div>
+ -->
 
 
-<!-- ISI popup -->
-<div class="popup popup-isi sprite modal-hidden">
-  <a class="popup-button-close" data-modal-trigger-close></a>
-  <div class="isi-copy" data-scrollable data-sketch-id="XYZ"></div>
-</div>
 
-
-<!-- Abbreviations modal -->
-<div class="popup popup-abbreviations sprite modal-hidden">
-  <a class="popup-button-close" data-modal-trigger-close></a>
-</div>
+<!-- Prescribing information -->
 
 
 <!-- Footer -->
 <footer class="sprite">
-  <div class="footer-btn sprite btn-isi" data-modal-trigger-open data-disable-close-btn data-modal-target=".popup-isi" data-modal-active-classname="isi-active"></div>
-  <div class="footer-btn sprite btn-pi" data-modal-trigger-open data-disable-close-btn data-modal-target=".popup-pi" data-modal-active-classname="pi-active"></div>
+  <div class="footer-btn sprite btn-isi" data-modal-trigger-open data-disable-close-btn data-modal-target=".isi-modal" data-modal-active-classname="isi-active"></div>
+  <div class="footer-btn sprite btn-pi" data-modal-trigger-open data-disable-close-btn data-modal-target=".pi-modal" data-modal-active-classname="pi-active"></div>
  </footer>
 
 <div id="overlay"></div>
+
+<!-- ISI -->
+<div class="isi-modal sprite">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+  <!-- VAXELIS -->
+  <div class="isi-link isi-vaxelis sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".isi-vaxelis-modal" data-modal-active-classname="isi-vaxelis-active"></div>
+ <!-- Pentacel -->
+ <div class="isi-link isi-pentacel sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".isi-pentacel-modal" data-modal-active-classname="isi-pentacel-active"></div>
+ <!-- Quadracel -->
+ <div class="isi-link isi-quadracel sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".isi-quadracel-modal" data-modal-active-classname="isi-quadracel-active"></div>
+ <!-- Fluzone Quadrivalent -->
+ <div class="isi-link isi-fluzone sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".isi-fluzone-modal" data-modal-active-classname="isi-fluzone-active"></div>
+ <!-- Mendquadfi-->
+ <div class="isi-link isi-menquadfi sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".isi-menquadfi-modal" data-modal-active-classname="isi-menquadfi-active"></div>
+ <!-- Adacel -->
+ <div class="isi-link isi-adacel sprite" data-modal-trigger-open data-disable-close-btn data-modal-target=".isi-adacel-modal" data-modal-active-classname="isi-adacel-active"></div>
+
+</div>
+
+<div class="brand-isi-modal isi-vaxelis-modal sprite">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <a class="link-of-vaxelis sprite" data-modal-trigger-close href=""></a>
+</div>
+
+<div class="brand-isi-modal isi-pentacel-modal sprite">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<div class="brand-isi-modal isi-quadracel-modal sprite">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<div class="brand-isi-modal isi-fluzone-modal sprite">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<div class="brand-isi-modal isi-menquadfi-modal sprite">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<div class="brand-isi-modal isi-adacel-modal sprite">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+
+<!-- Prescribing information -->
+<div class="pi-modal sprite">
+  <a class="popup-button-close" data-modal-trigger-close></a>
+  <!-- Vaxelis -->
+  <a class="pi-link pi-vaxelis sprite" href="" ></a>
+  <!-- Pentacel -->
+  <a class="pi-link pi-pentacel-1 sprite" href="" ></a>
+  <a class="pi-link pi-pentacel-2 sprite" href="" ></a>
+  <!-- Quadracel -->
+  <a class="pi-link pi-quadracel-1 sprite" href="" ></a>
+  <a class="pi-link pi-quadracel-2 sprite" href="" ></a>
+  <!-- Fluzone Quadrivalent -->
+  <a class="pi-link pi-fluzone sprite" href="" ></a>
+  <!-- Mendquadfi-->
+  <a class="pi-link pi-menquadfi sprite" href="" ></a>
+  <!-- Adacel -->
+  <a class="pi-link pi-adacel sprite" href="" ></a>
+  <!-- Tenivac -->
+  <a class="pi-link pi-tenivac sprite" href="" ></a>
+  <!-- Daptacel -->
+  <a class="pi-link pi-daptacel sprite" href="" ></a>
+  <!-- IPOL -->
+  <a class="pi-link pi-ipol sprite" href="" ></a>
+  <!-- ActHIB -->
+  <a class="pi-link pi-acthib sprite" href="" ></a>
+  <!-- Tubersol -->
+  <a class="pi-link pi-tubersol sprite" href="" ></a>
+  <!-- imogam -->
+  <a class="pi-link pi-imogam sprite" href="" ></a>
+  <!-- Imovax -->
+  <a class="pi-link pi-imovax sprite" href="" ></a>
+  <!-- Typhim -->
+  <a class="pi-link pi-typhim sprite" href="" ></a>
+  <!-- YF-VAX -->
+  <a class="pi-link pi-yfvax sprite" href="" ></a>
+ 
+</div>
 
 <!-- end: global.content.html -->
 

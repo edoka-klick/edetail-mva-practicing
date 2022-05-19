@@ -182,6 +182,146 @@ footer .footer-btn {
   }
 }
 
+.isi-modal{
+  background-image: url(./pasteur/media/isi-popup.png);
+  top: 320px;
+  left: 70px;
+  width: 230px !important;
+  height: 400px !important;
+
+  &:after {
+    content: "";
+    background-size: 100% 100%;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.isi-modal .isi-link{
+  width: 218px;
+  height: 82px;
+  left: 2px;
+
+  // Left
+  &.isi-vaxelis {
+    top: 2px;
+  }
+  &.isi-pentacel {
+    top: 84px;
+    height: 78px;
+  }
+  &.isi-quadracel {
+    top: 163px;
+    height: 65px;
+  }
+  &.isi-fluzone {    
+    top: 229px;
+    height: 40px;
+  }
+  &.isi-menquadfi {
+    top: 271px;
+    height: 52px;
+  }
+  &.isi-adacel {
+    top: 325px;
+    height: 55px;
+  }
+}
+
+.brand-isi-modal{
+  top: 70px;
+  left: 50px;
+  width: 910px !important;
+  height: 625px !important;
+
+  &.isi-vaxelis-modal{
+    background-image: url(./pasteur/media/VXS-ISI.png);
+  }
+  &.isi-pentacel-modal {
+    background-image: url(./pasteur/media/PTL-ISI.png);
+  }
+  &.isi-quadracel-modal {
+    background-image: url(./pasteur/media/QCL-ISI.png);
+  }
+  &.isi-fluzone-modal {    
+    background-image: url(./pasteur/media/FZQ-ISI.png);
+  }
+  &.isi-menquadfi-modal {
+    background-image: url(./pasteur/media/MQF-ISI.png);
+  }
+  &.isi-adacel-modal {
+    background-image: url(./pasteur/media/ADC-ISI.png);
+  }
+
+  &:after {
+    content: "";
+    background-size: 100% 100%;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.link-of-vaxelis{
+  width: 50px;
+  height: 10px;
+  top: 300px;
+  left: 300px;
+}
+
+
+.pi-modal{
+  background-image: url(./pasteur/media/pi-popup.png);
+  top: 170px;
+  left: 150px;
+  width: 470px !important;
+  height: 550px !important;
+
+  &:after {
+    content: "";
+    background-size: 100% 100%;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.pi-modal, .pi-link{
+  width: 215px;
+  height: 75px;
+
+  &.pi-vaxelis{
+    top: 2px;
+    left: 2px;
+  }
+  &.pi-pentacel-1{
+    top: 76px;
+    left: 2px;
+    height: 95px;
+  }
+  &.pi-pentacel-2{
+    top: 170px;
+    left: 2px;
+    height: 95px;
+  }
+  &.pi-quadracel-1{
+    top: 264px;
+    left: 2px;
+    height: 85px;
+  }
+  &.pi-quadracel-2{
+    top: 2px;
+    left: 2px;
+  }
+}
+
 
 
 //
